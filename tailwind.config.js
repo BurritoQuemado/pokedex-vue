@@ -7,6 +7,7 @@ export default {
         sans: ['Poppins', 'sans-serif']
       },
       colors: {
+        gameboy: "#9ca04c",
         fire: {
           primary: "#FFA07A ",
           secondary: "#FF0000"
