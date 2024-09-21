@@ -15,19 +15,19 @@
 
 </script>
 <template>
-    <div class="mt-10 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-gray-700 lg:max-w-none lg:grid-cols-2">
+    <div class="grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-gray-700 lg:max-w-none lg:grid-cols-2">
         <div class="flex justify-center">
             <PokemonHero :pokemonName="pokemonName" :pokemonId="pokemonId" :pokemonSprite="pokemonSprite" :pokemonType="pokemonType"/>
         </div>
         <div class="flex flex-col justify-center">
-            <div class="bg-white border-2 max-w-xl border-gray-900 rounded-xl py-6 mx-10 my-10 sm:py-22">
+            <div class="bg-gameboy border-2 max-w-xl border-gray-900 rounded-xl py-6 mx-10 my-10 sm:py-22">
                 <h2 v-if="pokemonTypes.length == 1" class="text-center md:text-left  md:ml-12 lg:ml-4">Type:</h2>
                 <h2 v-else class="text-center md:text-left  md:ml-12 lg:ml-4">Types:</h2>
                 <div class="mx-auto max-w-7xl py-6 px-6 lg:px-8">
                     <PokemonTypePill :types="pokemonTypes" />
                 </div>
             </div>
-            <div class="bg-white border-2 max-w-xl border-gray-900 rounded-xl py-6 mx-10 my-10 sm:py-22">
+            <div class="bg-gameboy border-2 max-w-xl border-gray-900 rounded-xl py-6 mx-10 my-10 sm:py-22">
                 <h2 v-if="pokemonAbilities.length == 1" class="text-center md:text-left  md:ml-12 lg:ml-4" >Ability:</h2>
                 <h2 v-else class="text-center md:text-left  md:ml-12 lg:ml-4">Abilities:</h2>
                 <div class="mx-auto max-w-7xl py-6 px-6 lg:px-8">

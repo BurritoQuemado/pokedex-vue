@@ -38,10 +38,12 @@
     );
 </script>
 <template>
-    <div v-if="state.isLoading" class="text-center text-gray-800">
-        <PulseLoader />
-    </div>
-    <div v-else>
-        <PokemonInfo :pokemonName="state.pokemon.name" :pokemonId="pokemonId" :pokemonSprite="state.pokemonSprite" :pokemonType="state.pokemonType" :pokemonAbilities="state.pokemon.abilities" :pokemonTypes="state.pokemon.types" />
+    <div class="bg-gray-200 py-10">
+        <div v-if="state.isLoading" class="text-center text-gray-800">
+            <PulseLoader />
+        </div>
+        <div v-else>
+            <PokemonInfo :pokemonName="state.pokemon.name" :pokemonId="pokemonId" :pokemonSprite="state.pokemonSprite" :pokemonType="state.pokemonType" :pokemonAbilities="state.pokemon.abilities" :pokemonTypes="state.pokemon.types" />
+        </div>
     </div>
 </template>
