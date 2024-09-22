@@ -14,11 +14,11 @@ export default {
         },
         water: {
           primary: "#0075BE",
-          secondary: "#34C759"
+          secondary: "#004d7d"
         },
         grass: {
           primary: "#34C759",
-          secondary: "#F700FFFF"
+          secondary: "#23883C"
         },
         electric: {
           primary: "#FFFF00",
@@ -38,7 +38,7 @@ export default {
         },
         ground: {
           primary: "#964B00",
-          secondary: "#C7F464"
+          secondary: "#5B2D00FF"
         },
         flying: {
           primary: "#0075BE",
