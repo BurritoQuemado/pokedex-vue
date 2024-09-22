@@ -4,6 +4,7 @@
     import PulseLoader from 'vue-spinner/src/PulseLoader.vue'; 
     import { useRoute } from 'vue-router';
     import PokemonInfo from '@/components/PokemonInfo.vue';
+    import AlertError from '@/components/AlertError.vue';
 
     //declaracion de el route para acceder a los parametos que se pasan a traves de la url
     const route = useRoute();
@@ -16,6 +17,7 @@
         pokemonSprite: "",
         pokemonType: "",
         isLoading: true,
+        errorFound: false
     })
 
     onMounted( 
@@ -31,6 +33,9 @@
               state.pokemonType = response.data.types[0].type.name;
           } catch (error) {
               console.log(error)
+              alert("Error al recibir los datos")
+              state.errorFound = true;
+              state.isLoading = false;
           } finally {
             state.isLoading = false;
           }
@@ -43,6 +48,9 @@
             <PulseLoader />
         </div>
         <div v-else>
+            <div v-if="state.errorFound" class="px-20">
+                <AlertError />
+            </div>
             <PokemonInfo :pokemonName="state.pokemon.name" :pokemonId="pokemonId" :pokemonSprite="state.pokemonSprite" :pokemonType="state.pokemonType" :pokemonAbilities="state.pokemon.abilities" :pokemonTypes="state.pokemon.types" />
         </div>
     </div>

@@ -3,10 +3,12 @@
     import axios from 'axios';
     import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
     import PokemonCard from '@/components/PokemonCard.vue';
+    import AlertError from './AlertError.vue';
     
     //Lista donde se guardaran los pokemons como objetos
     const pokemons = ref([]);
     const isLoading = ref(true);
+    const error = ref(false);
 
     //Numero maximo de pokemons de los cuales se obtendra la informacion en este caso 50
     const MAX_POKEMONS = 50
@@ -35,7 +37,9 @@
               }
 
           } catch (error) {
+            //Mostrar mensaje de error si hay mediante el componenete de alerta de error
             console.log(error)
+            error.value = true
           } finally {
             isLoading.value = false;
           }
@@ -43,6 +47,9 @@
     );
 </script>
 <template>
+  <div v-if="error">
+    <AlertError />
+  </div>
   <div v-if="isLoading" class="text-center text-gray-800">
     <PulseLoader />
   </div>
