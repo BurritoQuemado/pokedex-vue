@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "@/views/Home.vue"
 import PokemonView from "@/views/Pokemon.vue"
+import NotFound from "@/views/NotFound.vue";
 
 //Configuracion basica de un router con vue router, para poder usar diferentes vistas dependiendo la ruta
 const router = createRouter({
@@ -16,6 +17,11 @@ const router = createRouter({
             path: '/pokemon/:pokemonId',
             name: 'Pokemon',
             component: PokemonView
+        },
+        {
+            path: '/:catchAll(.*)',
+            name: 'not-found',
+            component: NotFound
         }
     ]
 });
